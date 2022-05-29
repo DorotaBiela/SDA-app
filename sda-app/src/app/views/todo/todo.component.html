@@ -1,1 +1,29 @@
-{{ todoList }}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">My ToDo list</h1>
+    <div class="card-body">
+      <form [formGroup]="todoForm">
+        <div class="d-flex">
+          <input type="text" class="form-control" formControlName="description" placeholder="Add your todo item here..." />
+          <button class="btn btn-primary font-weight-bold" type="submit" (click)="addTodoItem()" [disabled]="todoForm.invalid">Add</button>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="todoForm.get('description')?.dirty && todoForm.get('description')?.invalid">
+          This field is required!
+        </div>
+      </form>
+      <div class="todo-list-wrapper mt-3">
+        <div class="input-group" *ngFor="let todo of todoList; let i = index">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" [(ngModel)]="todo.isDone" />
+            </div>
+          </div>
+          <input type="text" class="form-control" [ngClass]="{ 'task-done': todo.isDone }" [(ngModel)]="todo.description" [disabled]="todo.isDone"/>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
