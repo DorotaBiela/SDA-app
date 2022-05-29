@@ -59,3 +59,29 @@ W celu rozpoczecia korzystania z pliku ze stylami Bootstrapa oraz plikiem JavaSc
 ## Dodanie nowych komponetów todo i students w folderze views (Views Module)
 
 ## Konfiguracja routingu
+
+## Modyfikacja navbaru w celu obsługi routingu
+
+## Page not found - obsługa na poziomie routingu oraz wyświetlenie stworzonego komponentu PageNotFound w przypadku nieobsługiwanej ścieżki strony.
+
+## Stworzenie intefejsu TodoItem
+
+## Stworzenie danych mock dla listy todo
+
+## Stworzenie serwisu odpowiedzialnego za obsługę przetwarzania danych
+
+## Cykl życia aplikacji - ngOnInit
+
+## Przygotowanie podstawowego widoku listy Todo
+
+## Aktualizacja o użycie wbudowanej dyrektywy *ngFor w celu dynamicznego wyświetlania wpisów na liście Todo
+
+## Użycie ngModel w celu obsługi checkboxów
+
+## Zbudowanie formularza ReactiveFormsModule
+
+## Zastosowanie ngClass, ngIf, a także właściwości takich jak disabled
+
+## Usuwanie wpisów z listy Todo
+
+## Empty state dla pustej listy Todo
