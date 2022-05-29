@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 /*
   Core Module - istnieje, aby ustrukturyzować elementy aplikacji, które wykorzystywane są tylko jeden raz w aplikacji (np. komponent navbaru).
@@ -14,7 +15,8 @@ import { NgModule } from '@angular/core';
     NavbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StudentsComponent } from './students/students.component';
 import { TodoComponent } from './todo/todo.component';
 
@@ -12,14 +13,16 @@ import { TodoComponent } from './todo/todo.component';
 @NgModule({
   declarations: [
     TodoComponent,
-    StudentsComponent
+    StudentsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     TodoComponent,
-    StudentsComponent
+    StudentsComponent,
+    PageNotFoundComponent
   ],
 })
 export class ViewsModule { }
