@@ -27,4 +27,10 @@ export class TodoService {
       })
     );
   }
+
+  removeTodoItem(id: number): Promise<TodoItem[]> {
+    const index: number = this.todoList.findIndex(todoItem => todoItem.id === id);
+
+    return Promise.resolve(this.todoList.splice(index, 1));
+  }
 }

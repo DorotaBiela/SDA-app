@@ -11,7 +11,7 @@
           This field is required!
         </div>
       </form>
-      <div class="todo-list-wrapper mt-3">
+      <div class="todo-list-wrapper mt-3" *ngIf="todoList.length; else noTodoItems">
         <div class="input-group" *ngFor="let todo of todoList; let i = index">
           <div class="input-group-prepend">
             <div class="input-group-text">
@@ -20,10 +20,18 @@
           </div>
           <input type="text" class="form-control" [ngClass]="{ 'task-done': todo.isDone }" [(ngModel)]="todo.description" [disabled]="todo.isDone"/>
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Remove</button>
+            <button class="btn btn-outline-secondary" type="button" (click)="removeTodo(todo.id)">Remove</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #noTodoItems>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">No todo items!</h1>
+    </div>
+  </div>
+</ng-template>

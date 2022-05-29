@@ -44,4 +44,8 @@ export class TodoComponent implements OnInit {
     });
   }
 
+  removeTodo(id: number) {
+    this.todoService.removeTodoItem(id).then(() => this.loadTodoList());
+  }
+
 }
