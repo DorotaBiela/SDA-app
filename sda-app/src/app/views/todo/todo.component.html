@@ -1,6 +1,8 @@
+<app-header>
+  <span title>My ToDo List</span>
+</app-header>
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-4">My ToDo list</h1>
     <div class="card-body">
       <form [formGroup]="todoForm">
         <div class="d-flex">
@@ -12,7 +14,7 @@
         </div>
       </form>
       <div class="todo-list-wrapper mt-3" *ngIf="todoList.length; else noTodoItems">
-        <div class="input-group" *ngFor="let todo of todoList; let i = index">
+        <!--<div class="input-group" *ngFor="let todo of todoList; let i = index">
           <div class="input-group-prepend">
             <div class="input-group-text">
               <input type="checkbox" [(ngModel)]="todo.isDone" />
@@ -22,6 +24,9 @@
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="button" (click)="removeTodo(todo.id)">Remove</button>
           </div>
+        </div> -->
+        <div *ngFor="let todo of todoList; let i = index">
+          <app-todo-item [todo]="todo" (removeItem)="removeTodo($event)"></app-todo-item>
         </div>
       </div>
     </div>

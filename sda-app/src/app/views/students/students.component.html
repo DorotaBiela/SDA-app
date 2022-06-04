@@ -1,1 +1,40 @@
-<p>students works!</p>
+<app-header>
+  <span title>My Students List</span>
+</app-header>
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Date of birth</th>
+                <th>Field of study</th>
+                <th>Average</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of studentsList">
+                <td>{{ student.id }}</td>
+                <td>{{ student.firstName }}</td>
+                <td>{{ student.lastName }}</td>
+                <td>{{ student.dateOfBirth }}</td>
+                <td>{{ student.fieldOfStudy }}</td>
+                <td>{{ student.average }}</td>
+                <td>
+                  <button type="button" aria-label="Close" class="btn-close btn-close-white"></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
