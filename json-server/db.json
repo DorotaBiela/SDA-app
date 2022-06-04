@@ -1,3 +1,28 @@
 {
-  "students": []
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "dateOfBirth": "1990-01-01",
+      "fieldOfStudy": "IT",
+      "average": 4.48
+    },
+    {
+      "id": 2,
+      "firstName": "Tomasz",
+      "lastName": "Nowak",
+      "dateOfBirth": "1993-01-01",
+      "fieldOfStudy": "Medicine",
+      "average": 4.01
+    },
+    {
+      "id": 3,
+      "firstName": "Ania",
+      "lastName": "Lewandowska",
+      "dateOfBirth": "1987-01-01",
+      "fieldOfStudy": "IT",
+      "average": 4.78
+    }
+  ]
 }
