@@ -23,6 +23,14 @@
       "dateOfBirth": "1987-01-01",
       "fieldOfStudy": "IT",
       "average": 4.78
+    },
+    {
+      "firstName": "Damian",
+      "lastName": "Graczyk",
+      "dateOfBirth": "1990-01-01",
+      "fieldOfStudy": "IT",
+      "average": 4,
+      "id": 4
     }
   ]
 }

@@ -24,11 +24,11 @@
                 <td>{{ student.id }}</td>
                 <td>{{ student.firstName }}</td>
                 <td>{{ student.lastName }}</td>
-                <td>{{ student.dateOfBirth }}</td>
-                <td>{{ student.fieldOfStudy }}</td>
-                <td>{{ student.average }}</td>
+                <td>{{ student.dateOfBirth | date: 'shortDate' }}</td>
+                <td>{{ student.fieldOfStudy | uppercase }}</td>
+                <td [ngClass]="{ 'fw-bold': student.average >= 4.5 }">{{ student.average | number: '1.2-2' }}</td>
                 <td>
-                  <button type="button" aria-label="Close" class="btn-close btn-close-white"></button>
+                  <button type="button" aria-label="Close" class="btn-close btn-close-white" (click)="removeStudent(student.id, $event)"></button>
                 </td>
               </tr>
             </tbody>
@@ -36,5 +36,40 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container">
+    <h1 class="display-4">Add a new student</h1>
+    <form [formGroup]="studentForm">
+      <div class="row form-group">
+        <div class="col-sm-4">
+          <label>First name</label>
+          <input type="text" class="form-control" formControlName="firstName" placeholder="First name" />
+        </div>
+        <div class="col-sm-4">
+          <label>Last name</label>
+          <input type="text" class="form-control" formControlName="lastName" placeholder="Last name" />
+        </div>
+        <div class="col-sm-4">
+          <label>Date of birth</label>
+          <input type="date" class="form-control" formControlName="dateOfBirth" placeholder="Date of birth" />
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-4">
+          <label>Field of study</label>
+          <input type="text" class="form-control" formControlName="fieldOfStudy" placeholder="Field of study" />
+        </div>
+        <div class="col-sm-4">
+          <label>Average</label>
+          <input type="number" class="form-control" formControlName="average" placeholder="Average" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-primary float-end" [disabled]="studentForm.invalid" (click)="addStudent()">Save</button>
+          <button type="button" class="btn btn-default float-end" (click)="createStudentForm()">Reset your form!</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
